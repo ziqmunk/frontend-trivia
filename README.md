@@ -1,5 +1,10 @@
 # FrontendTrivia
 
+<img width="526" height="514" alt="Screenshot 2026-06-14 at 4 33 31 PM" src="https://github.com/user-attachments/assets/30276325-6b12-4955-a671-66c5d8f24c81" />
+<img width="528" height="516" alt="Screenshot 2026-06-14 at 4 33 41 PM" src="https://github.com/user-attachments/assets/52ffa626-b52e-48e8-ba55-92c200b4fe78" />
+<img width="531" height="515" alt="Screenshot 2026-06-14 at 4 34 56 PM" src="https://github.com/user-attachments/assets/f82eefdd-179b-4b4e-88a3-23d323dceeff" />
+
+
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
 
 ## Development server
