@@ -1,0 +1,22 @@
+<div class="min-h-screen bg-slate-900 flex flex-col justify-center items-center text-white px-4">
+  <div class="w-full max-w-md bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl p-8 text-center space-y-6">
+    <div class="inline-flex p-4 bg-blue-600/10 border border-blue-500/20 text-blue-400 rounded-2xl text-4xl mb-2">
+      🏆
+    </div>
+    
+    <h1 class="text-3xl font-extrabold tracking-tight">Challenge Completed!</h1>
+    <p class="text-slate-400">Great effort! Here is how your scores line up for this session.</p>
+
+    <div class="bg-slate-900/60 rounded-xl p-6 border border-slate-700/50 font-mono">
+      <span class="block text-slate-500 uppercase tracking-widest text-xs mb-1">Final Score</span>
+      <span class="text-5xl font-black text-emerald-400">{{ score }}</span>
+      <span class="text-2xl text-slate-500"> / {{ total }}</span>
+    </div>
+
+    <button 
+      routerLink="/" 
+      class="w-full inline-block bg-slate-700 hover:bg-slate-600 border border-slate-600 font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 transform active:scale-95">
+      Try Another Round
+    </button>
+  </div>
+</div>

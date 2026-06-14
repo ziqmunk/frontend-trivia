@@ -1,0 +1,42 @@
+<div class="min-h-screen bg-slate-900 flex flex-col justify-center items-center text-white px-4">
+  <div class="w-full max-w-xl bg-slate-800 rounded-2xl border border-slate-700 shadow-2xl p-6 md:p-8 space-y-6">
+    
+    <div class="flex justify-between items-center text-sm font-medium text-slate-400">
+      <span>Question {{ currentIndex() + 1 }} of {{ questions.length }}</span>
+      <span class="flex items-center gap-1.5 font-mono bg-slate-700/50 px-3 py-1 rounded-full border border-slate-600">
+        <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+        {{ timeLeft() }}s left
+      </span>
+    </div>
+
+    <div class="w-full h-2 bg-slate-700 rounded-full overflow-hidden">
+      <div 
+        class="h-full bg-gradient-to from-blue-500 to-emerald-500 transition-all duration-500 ease-out"
+        [style.width.%]="progressPercentage()">
+      </div>
+    </div>
+
+    <div class="py-2">
+      <h2 class="text-xl md:text-2xl font-bold text-slate-100 leading-snug">
+        {{ currentQuestion().question }}
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 gap-3.5">
+      <button 
+        *ngFor="let option of currentQuestion().options"
+        (click)="selectOption(option)"
+        [disabled]="isAnswered()"
+        [ngClass]="{
+          'bg-slate-700/50 hover:bg-slate-700 border-slate-600 hover:border-blue-500 text-slate-200 cursor-pointer': !isAnswered(),
+          'bg-emerald-600 border-emerald-500 text-white font-semibold shadow-lg shadow-emerald-600/20': isAnswered() && option === currentQuestion().correctAnswer,
+          'bg-rose-600 border-rose-500 text-white font-semibold shadow-lg shadow-rose-600/20': isAnswered() && option === selectedAnswer() && option !== currentQuestion().correctAnswer,
+          'opacity-40 border-slate-700 bg-slate-800/50 text-slate-500': isAnswered() && option !== currentQuestion().correctAnswer && option !== selectedAnswer()
+        }"
+        class="w-full text-left px-5 py-4 rounded-xl border text-base font-medium transition-all duration-300 transform active:scale-98 disabled:pointer-events-none">
+        {{ option }}
+      </button>
+    </div>
+
+  </div>
+</div>
